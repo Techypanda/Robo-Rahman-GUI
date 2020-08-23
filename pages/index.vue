@@ -1,14 +1,26 @@
 <template>
   <v-layout>
-    <div class="ROBO_CONTROLLER!" v-if="turn == this.TURNS.PRODUCER_TURN">
+    <div class="ROBO_CONTROLLER! container" v-if="turn == this.TURNS.PRODUCER_TURN">
       <loading
         :can-cancel="false"
         :is-full-page="true"
         :active.sync="sending"
       />
-      <v-btn @click="dapostman(DIRECTIONS.UP)" v-on:keyup.enter="dapostman(DIRECTIONS.UP)"><v-icon>up</v-icon></v-btn>
-      <v-btn @click="dapostman(DIRECTIONS.LEFT)"><v-icon>left</v-icon></v-btn>
-      <v-btn @click="dapostman(DIRECTIONS.RIGHT)"><v-icon>right</v-icon></v-btn>
+      <v-row>
+        <v-btn @click="dapostman(DIRECTIONS.LEFTUP)" class="col">Left Up</v-btn>
+        <v-btn @click="dapostman(DIRECTIONS.UP)" class="col">Up</v-btn>
+        <v-btn @click="dapostman(DIRECTIONS.RIGHTUP)" class="col">Right Up</v-btn>
+      </v-row>
+      <v-row>
+        <v-btn @click="dapostman(DIRECTIONS.LEFT)" class="col">Left</v-btn>
+        <v-btn class="col">null</v-btn>
+        <v-btn @click="dapostman(DIRECTIONS.RIGHT)" class="col">Right</v-btn>
+      </v-row>
+      <v-row>
+        <v-btn @click="dapostman(DIRECTIONS.LEFTDOWN)" class="col">Left Back</v-btn>
+        <v-btn @click="dapostman(DIRECTIONS.DOWN)" class="col">Back</v-btn>
+        <v-btn @click="dapostman(DIRECTIONS.RIGHTDOWN)" class="col">Right Back</v-btn>
+      </v-row>
     </div>
     <div class="WAITING_ON_CONTROLS!" v-else>
       <v-sheet>
@@ -52,9 +64,14 @@ export default {
   data() {
     return {
       DIRECTIONS: {
-        LEFT: 1,
-        UP: 2,
+        UP: 1,
+        RIGHTUP: 2,
         RIGHT: 3,
+        RIGHTDOWN: 4,
+        DOWN: 5,
+        LEFTDOWN: 6,
+        LEFT: 7,
+        LEFTUP: 8
       },
       TURNS: {
         CONSUMER_TURN: 1,
