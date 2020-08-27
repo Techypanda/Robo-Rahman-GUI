@@ -7,19 +7,36 @@
         :active.sync="sending"
       />
       <v-row>
-        <v-btn @click="dapostman(DIRECTIONS.LEFTUP)" class="col">Left Up</v-btn>
-        <v-btn @click="dapostman(DIRECTIONS.UP)" class="col">Up</v-btn>
-        <v-btn @click="dapostman(DIRECTIONS.RIGHTUP)" class="col">Right Up</v-btn>
+        <v-col>
+          <v-btn block @click="dapostman(DIRECTIONS.LEFTUP)" class="leftUpBtn btn">Left Up</v-btn>
+        </v-col>
+        <v-col>
+          <v-btn block @click="dapostman(DIRECTIONS.UP)" class="upBtn btn">Up</v-btn>
+        </v-col>
+        <v-col>
+          <v-btn block @click="dapostman(DIRECTIONS.RIGHTUP)" class="rightUpBtn btn">Right Up</v-btn>
+        </v-col>
       </v-row>
       <v-row>
-        <v-btn @click="dapostman(DIRECTIONS.LEFT)" class="col">Left</v-btn>
-        <v-btn class="col">null</v-btn>
-        <v-btn @click="dapostman(DIRECTIONS.RIGHT)" class="col">Right</v-btn>
+        <v-col>
+          <v-btn block class="leftBtn btn"  @click="dapostman(DIRECTIONS.LEFT)">Left</v-btn>
+        </v-col>
+        <v-col>
+        </v-col>
+        <v-col>
+          <v-btn block class="rightBtn btn" @click="dapostman(DIRECTIONS.RIGHT)">Right</v-btn>
+        </v-col>
       </v-row>
       <v-row>
-        <v-btn @click="dapostman(DIRECTIONS.LEFTDOWN)" class="col">Left Back</v-btn>
-        <v-btn @click="dapostman(DIRECTIONS.DOWN)" class="col">Back</v-btn>
-        <v-btn @click="dapostman(DIRECTIONS.RIGHTDOWN)" class="col">Right Back</v-btn>
+        <v-col>
+          <v-btn block @click="dapostman(DIRECTIONS.LEFTDOWN)" class="leftDownBtn btn">Left Down</v-btn>
+        </v-col>
+        <v-col>
+          <v-btn block @click="dapostman(DIRECTIONS.DOWN)" class="downBtn btn">Down</v-btn>
+        </v-col>
+        <v-col>
+          <v-btn block @click="dapostman(DIRECTIONS.RIGHTDOWN)" class="rightDownBtn">Right Down</v-btn>
+        </v-col>
       </v-row>
     </div>
     <div class="WAITING_ON_CONTROLS!" v-else>
