@@ -71,7 +71,7 @@ export default {
   },
   proxy: {
     '/api': {
-      target: 'http://103.4.235.66/api/RobotInstruction/1',
+      target: 'http://13.239.115.233:5000/api/RobotInstruction/1',
       pathRewrite: {
         '^/api': '/'
       }

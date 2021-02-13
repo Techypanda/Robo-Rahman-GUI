@@ -114,6 +114,10 @@ export default {
     dapostman(direction) {
       this.sendData(true);
       // Robot is consumer, I am the producer.
+      // perform a post request.
+      // nevermind im using a put request
+      // what the fuck
+      // why is it crashing?
       const ID = 1; // This ID Will never change, because its just a inmemory sql database lol.
       const payload = {
         id: ID,
