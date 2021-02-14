@@ -16,7 +16,8 @@
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/vuetify": "1.11.2",
     "nuxt": "^2.14.0",
-    "vue-loading-overlay": "^3.3.3"
+    "vue-loading-overlay": "^3.3.3",
+    "vue-socket.io": "^3.0.10"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2"

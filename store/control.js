@@ -1,11 +1,19 @@
 export default {
   namespaced: true,
   state: {
+    socket: null,
     instruction: null,
     sending: false,
     turn: -999,
+    isMoving: false,
   },
   mutations: {
+    UPDATE_MOVING(state, data) {
+      state.isMoving = data;
+    },
+    UPDATE_SOCKET(state, data) {
+      state.socket = data;
+    },
     UPDATE_INSTRUCTION(state, data) {
       state.instruction = data
     },
@@ -17,6 +25,12 @@ export default {
     }
   },
   actions: {
+    setMoving({commit}, payload) {
+      commit("UPDATE_MOVING", payload);
+    },
+    setSocket({commit}, payload) {
+      commit("UPDATE_SOCKET", payload);
+    },
     sendData({commit}) {
       commit("UPDATE_SENDING", true);
     },
@@ -73,6 +87,12 @@ export default {
     }
   },
   getters: {
+    getMoving(state) {
+      return state.isMoving;
+    },
+    getSocket(state) {
+      return state.socket;
+    },
     getInstructionGetter(state) {
       return state.instruction;
     },
